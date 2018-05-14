@@ -25,13 +25,17 @@ body {
 }
 #title {
     display: block;
-    font: 10em 'Montserrat';
-    height:200;
-    margin: -90 auto;
+    font: 20em 'Montserrat';
+    margin: 0 auto;
+    width = 100%;
+    height= 300px;
+    background-color:#CCE2EA;
 }
 #description {
+    width = 100%;
+    height= 5%;
     display: block;
-    margin: -120 auto 0 auto;
+    margin: -10 -50 auto auto;
     background-color:#CCE2EA;
     fill: #000000;
     stroke: none;
@@ -49,6 +53,33 @@ body {
     width: 50%;
     float: right;
     background-color:#F1F1F2;
+}
+#slide {
+    text-align: center;
+}
+.subtitle {
+    display: block;
+    margin: 70 auto;
+    text-align: center;
+    font-size: 10em;
+}
+#migMap {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: -40 auto 50 auto;
+}
+#map {
+    display: block;
+    margin: -40 auto 50 auto;
+    font-size: 20px;
+}
+#lineChart {
+    display: block;
+    margin: 20 auto;
+    width: 100%;
+    height: 20%;
+    font-size: 2em;
 }
 
 path.states{ cursor: pointer; }
@@ -97,30 +128,39 @@ Raw
 </head>
 <body>
 
-<svg id = "titlepic" viewBox="0 0 960 300">
+<div id = "titlepic">
+<svg viewBox="0 0 960 300">
 </svg>
-<svg id = "title" viewBox="0 0 960 300">
-	<symbol id="s-text">
-		<text text-anchor="middle" x="50%" y="90%">Migration in USA</text>
-	</symbol>
+</div>
+<div id = "title">
+    <svg width = "100%" height=300>
+        <symbol id="s-text">
+            <text text-anchor="middle" x="50%" y="80%">Migration in USA</text>
+        </symbol>
 
-	<g class = "g-ants">
-		<use xlink:href="#s-text" class="text-copy"></use>
-		<use xlink:href="#s-text" class="text-copy"></use>
-		<use xlink:href="#s-text" class="text-copy"></use>
-		<use xlink:href="#s-text" class="text-copy"></use>
-		<use xlink:href="#s-text" class="text-copy"></use>
-	</g>
-</svg>
+        <g class = "g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+    </svg>
+</div>
 
-<svg id = "description" viewBox="0 0 960 200">
-   <text text-anchor="middle" y="60%"
-     style="fill: #000000; stroke: none; font-size: 15px;">
-        <tspan x="50%" dy="5%">Immigration is a hot topic these days in United States,yet migration of people within the country have also brought</tspan>
-        <tspan x="50%" dy="10%">crucial impact to the United States’ economy, politics and culture. Americans have already seen this with the Western </tspan>
-        <tspan x="50%" dy="10%">expansion, the movement of Southern to Northern cities and the migration from northeastern to southern cities such as Florida.</tspan>
-    </text>
-</svg>
+<div id = "description">
+    <svg viewBox="0 0 960 200">
+       <text text-anchor="middle" y="30%"
+         style="fill: #000000; stroke: none; font-size: 15px;">
+            <tspan x="50%" dy="5%">Immigration is a hot topic these days in United States,yet migration of people within the country have also brought</tspan>
+            <tspan x="50%" dy="10%">crucial impact to the United States’ economy, politics and culture. Americans have already seen this with the Western </tspan>
+            <tspan x="50%" dy="10%"> expansion, the movement of Southern to Northern cities and the migrationfrom northeastern to southern cities such as Florida.</tspan>
+        </text>
+    </svg>
+</div>
 <svg id = "instruction1" viewBox="0 0 960 300">
    <text text-anchor="middle"
      style="fill: #000000; font-size: 40px;">
@@ -146,6 +186,21 @@ Raw
         <tspan x="3%" dy="15%"></tspan>
     </text>
 </svg>
-
+    
+<div id="slide">
+    <p class="subtitle">Total Population</p>
+    <svg id = "lineChart">
+    </svg>
+    <input id="yearslider" type="text" style="width:80%;"/>
+</div>
+<div id = "migMap">
+    <p class = "subtitle">Migration Population</p>
+    <svg id = "map">
+    </svg>
+</div>
+<svg id = "groupMap"></svg>
+<div id = "allResult" style="display:block; white-space: nowrap;">
+    <p class = "subtitle" id="tip">click state in the map to show more information below </p>
+</div>
 </body>
 </html>
